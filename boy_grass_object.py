@@ -93,20 +93,22 @@ def reset_world():
     zombie = Zombie()
     world.append(zombie)
     global ball 
-    ball = Ball()
+    ball = [Ball() for i in range(20)]
 
 
 
 def update_world():
     for o in world:
         o.update()
-    ball.update()
+    for ba in ball:
+        ba.update()
 
 def render_world():
     clear_canvas()
     for o in world:
         o.draw()
-    ball.draw()
+    for ba in ball:
+        ba.draw()
     update_canvas()
 
 def handle_events():
