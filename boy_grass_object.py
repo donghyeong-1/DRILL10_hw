@@ -42,21 +42,22 @@ class Zombie:
         self.image.clip_draw(self.frame * frame_width, 0, frame_width, frame_height,
                             self.x, self.y, frame_width // 2, frame_height // 2)
 
-class ball: # 풍선
+class Ball: # 풍선
     def __init__(self):
-        pass
+        self.x, self.y = random.randint(100, 700), 90
+        self.image = load_image('ball21x21.png')
 
     def update(self):
         pass
 
     def draw(self):
-        pass
+        self.image.clip_draw(0, 0, 100, 100, self.x, self.y)
     
     pass
 
 running = True
 world = None
-
+ball = None
 
 
 def reset_world():
@@ -71,6 +72,8 @@ def reset_world():
     world += team
     zombie = Zombie()
     world.append(zombie)
+    global ball 
+    ball = Ball()
 
 
 
@@ -82,6 +85,7 @@ def render_world():
     clear_canvas()
     for o in world:
         o.draw()
+    ball.draw()
     update_canvas()
 
 def handle_events():
@@ -92,6 +96,7 @@ def handle_events():
             running = False
         elif event.type == SDL_KEYDOWN and event.key == SDLK_ESCAPE:
             running = False
+
 
 
 open_canvas()
