@@ -53,7 +53,7 @@ class Ball: # 풍선
         self.moveup = True
 
     def update(self):
-        if self.y <= 550 and self.up == False:
+        if self.y <= 600 - self.size and self.up == False:
             self.y += self.speed
         else:
             self.up = True
