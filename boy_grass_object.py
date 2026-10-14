@@ -47,7 +47,7 @@ class Ball: # 풍선
         self.size = random.randint(30, 100)
         self.x, self.y = random.randint(50, 750), self.size // 2 + 40
         self.image = load_image('ball21x21.png')
-        self.speed =  0 #random.randint(1, 5)
+        self.speed = random.randint(1, 5)
         self.up = False
         self.count = 10
         self.moveup = True
@@ -72,13 +72,9 @@ class Ball: # 풍선
 
     def draw(self):
         self.image.clip_draw(0, 0, self.size, self.size, self.x, self.y)
-    
-    pass
 
 running = True
 world = None
-ball = None
-
 
 def reset_world():
     global running 
