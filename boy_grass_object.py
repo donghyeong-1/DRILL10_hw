@@ -45,7 +45,7 @@ class Zombie:
 class Ball: # 풍선
     def __init__(self):
         self.size = random.randint(30, 100)
-        self.x, self.y = random.randint(50, 750), 550 # self.size // 2 + 40
+        self.x, self.y = random.randint(50, 750), self.size // 2 + 40
         self.image = load_image('ball21x21.png')
         self.speed = random.randint(1, 5)
         self.up = False
@@ -53,7 +53,7 @@ class Ball: # 풍선
         self.moveup = True
 
     def update(self):
-        if self.y <= 600 - self.size // 2 and self.up == False:
+        if self.y <= 580 - self.size // 2 and self.up == False:
             self.y += self.speed
         else:
             self.up = True
