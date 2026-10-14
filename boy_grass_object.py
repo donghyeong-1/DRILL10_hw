@@ -49,7 +49,7 @@ class Ball: # 풍선
         self.image = load_image('ball21x21.png')
         self.speed = random.randint(1, 5)
         self.up = False
-        self.count = 5
+        self.count = 10
         self.moveup = True
 
     def update(self):
@@ -61,13 +61,13 @@ class Ball: # 풍선
                 self.y += 1
                 self.count -= 1
                 if self.count == 0:
-                    self.count = 5
+                    self.count = 10
                     self.moveup = False
             else:
                 self.y -= 1
                 self.count -= 1
                 if self.count == 0:
-                    self.count = 5
+                    self.count = 10
                     self.moveup = True
 
     def draw(self):
