@@ -46,12 +46,13 @@ class Ball: # 풍선
     def __init__(self):
         self.x, self.y = random.randint(100, 700), 90
         self.image = load_image('ball21x21.png')
+        self.size = random.randint(30, 100)
 
     def update(self):
         pass
 
     def draw(self):
-        self.image.clip_draw(0, 0, 100, 100, self.x, self.y)
+        self.image.clip_draw(0, 0, self.size, self.size, self.x, self.y)
     
     pass
 
