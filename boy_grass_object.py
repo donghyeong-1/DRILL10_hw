@@ -48,10 +48,27 @@ class Ball: # 풍선
         self.image = load_image('ball21x21.png')
         self.size = random.randint(30, 100)
         self.speed = random.randint(1, 5)
+        self.up = False
+        self.count = 5
+        self.moveup = True
 
     def update(self):
-        self.y += self.speed
-        pass
+        if self.y <= 550 and self.up == False:
+            self.y += self.speed
+        else:
+            self.up = True
+            if self.moveup:
+                self.y += 1
+                self.count -= 1
+                if self.count == 0:
+                    self.count = 5
+                    self.moveup = False
+            else:
+                self.y -= 1
+                self.count -= 1
+                if self.count == 0:
+                    self.count = 5
+                    self.moveup = True
 
     def draw(self):
         self.image.clip_draw(0, 0, self.size, self.size, self.x, self.y)
