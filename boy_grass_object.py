@@ -49,6 +49,7 @@ class Ball: # 풍선
         self.size = random.randint(30, 100)
 
     def update(self):
+        self.y += 5
         pass
 
     def draw(self):
@@ -81,6 +82,7 @@ def reset_world():
 def update_world():
     for o in world:
         o.update()
+    ball.update()
 
 def render_world():
     clear_canvas()
