@@ -47,7 +47,7 @@ class Ball: # 풍선
         self.size = random.randint(30, 100)
         self.x, self.y = random.randint(50, 750), self.size // 2 + 40
         self.image = load_image('ball21x21.png')
-        self.speed = random.randint(1, 5)
+        self.speed = random.randint(1, 7)
         self.up = False
         self.count = 10
         self.moveup = True
